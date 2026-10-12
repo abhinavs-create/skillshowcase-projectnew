@@ -1,5 +1,5 @@
 // One helper for every call to the Spring Boot backend.
-const BASE = "http://localhost:8080";
+const BASE = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
 export async function api(path, { method = "GET", body } = {}) {
   const headers = { "Content-Type": "application/json" };
